@@ -72,7 +72,7 @@
             for ( ; i < dataLength; i++ ) {
                 if ( this.tmpl.count <= 1 ) {
                     this.tmpl.elLi.push('<li class="place-item">' +
-                        '<a href="' + data[i].name + '" title="' + data[i].name + '" class="item-name" data-content="' + data[i].content + '"> ' + data[i].name + ' </a>' +
+                        '<a href="javascript:void(0)" title="' + data[i].name + '" class="item-name" data-content="' + data[i].content + '"> ' + data[i].name + ' </a>' +
                         '<span class="count">(' + data[i].count + ')</span>' +
                         '</li>');
 
@@ -119,7 +119,7 @@
          * @method addPlacesClickEvent
          */
         addPlacesClickEvent: function() {
-            var elItem = document.getElementsByClassName('item-name'),
+            var elItem = document.querySelectorAll('.item-name'),
                 elItemLength = elItem.length,
                 that = this,
                 i = 0;
@@ -127,9 +127,9 @@
             for ( ; i < elItemLength; i++ ) {
                 if ( elItem[i].addEventListener ) {
                     elItem[i].addEventListener('click', that.showPlaceContent, false);
-                }
-                else {
-                    elItem[i].attachEvent('onclick', that.showPlaceContent);
+                } else {
+                    elItem[i].onclick = that.showPlaceContent;
+                    //elItem[i].attachEvent('onclick', that.showPlaceContent, false);
                 }
             }
         },
@@ -145,8 +145,6 @@
 
             elContentWrapper.innerHTML = placeContent;
 
-            e.preventDefault();
-            return false;
         }
     };
 
