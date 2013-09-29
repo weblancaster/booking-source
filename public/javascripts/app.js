@@ -146,6 +146,7 @@
             elContentWrapper.innerHTML = placeContent;
 
             e.preventDefault();
+            return false;
         }
     };
 
