@@ -7,15 +7,45 @@
 	<!-- STYLES -->
 	<link rel="stylesheet" href="stylesheets/app.min.css">
 
-	<!-- JS -->
-	<script src="javascripts/app.js"></script>
+    <style type="text/css">
+        .main-content {
+            width: 960px;
+            margin: 0 auto;
+        }
+        #results {
+            overflow: hidden;
+            margin: 0 0 20px 0;
+        }
+        .places {
+            float: left;
+            width: 230px;
+            margin: 0 20px 30px 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+    </style>
 
 </head>
 <body>
 
 	<h1>Booking.com Test</h1>
+    <!-- title end -->
 
+    <div class="main-content">
+        <div id="results">
 
-	
+        </div>
+
+        <div id="additional-content" class="additional-content">
+            click on the city for more information.
+        </div>
+    </div>
+    <!-- main content end -->
+
+    <!-- JS -->
+    <script src="javascripts/app.js"></script>
+
 </body>
 </html>
